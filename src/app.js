@@ -1,13 +1,16 @@
-
 const express = require('express');
+const paulaRouter = require('./routers/melo');
+
 const app = express();
 
-// Rutas
+console.log("Ruta /paula cargada correctamente");
+
+// Ruta raíz
 app.get('/', (req, res) => {
-  res.send('Hola equipo 🚀 - Main limpio');
+  res.send('Hola equipo 👋');
 });
 
-// importar rutas (cada miembro agregará su propia ruta en su feature)
-try { require('./routes/paula')(app); } catch (e) {}
+// Montar router de Paula
+app.use('/paula', paulaRouter);
 
 module.exports = app;
