@@ -8,6 +8,6 @@ app.get('/', (req, res) => {
 });
 
 // importar rutas (cada miembro agregará su propia ruta en su feature)
-try { require('./routes/paula')(app); } catch (e) {}
+try { require('./routers/paula')(app); } catch (e) {}
 
 module.exports = app;
