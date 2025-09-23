@@ -25,6 +25,10 @@ jobs:
       - name: Run tests
         run: npm test
 
+      - name: Create deployment package
+        run: |
+          zip -r proyecto-prueba.zip src/ package.json package-lock.json
+
       - name: Deploy to Elastic Beanstalk
         uses: einaregilsson/beanstalk-deploy@v22
         with:
